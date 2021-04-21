@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set version env
-      run: echo "PRERELEASE_VERSION=$(echo v`date +%Y.%m.%d`.`git rev-parse --short HEAD`)" >> $GITHUB_ENV
+      run: echo "PRERELEASE_VERSION=$(echo v`date +%Y.%m.%d`.`git rev-parse --short HEAD`.rc)" >> $GITHUB_ENV
     - uses: marvinpinto/action-automatic-releases@latest
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
