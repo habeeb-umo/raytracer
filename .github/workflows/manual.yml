@@ -15,4 +15,4 @@ jobs:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: ${{ env.PRERELEASE_VERSION }}
         prerelease: true
-        title: "Development Build"
+        title: ${{ env.PRERELEASE_VERSION }}
