@@ -5,7 +5,7 @@ name: Deploy
 
 on: 
   release:
-    type: prerelease
+    type: prereleased
 jobs:
   greet:
     runs-on: ubuntu-latest
