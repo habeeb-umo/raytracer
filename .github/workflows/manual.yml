@@ -12,7 +12,7 @@ jobs:
       run: echo "PRERELEASE_VERSION=$(echo v`date +%Y.%m.%d`.`git rev-parse --short HEAD`.rc)" >> $GITHUB_ENV
     - uses: marvinpinto/action-automatic-releases@latest
       with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        repo_token: "${{ secrets.WORKFLOW_PAT }}"
         automatic_release_tag: ${{ env.PRERELEASE_VERSION }}
         prerelease: true
         title: ${{ env.PRERELEASE_VERSION }}
