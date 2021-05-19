@@ -15,5 +15,6 @@ jobs:
         brew install terragrunt
         brew unlink terraform
         brew install tfenv
+        brew link terraform
         tfenv install 0.15.0
         tfenv use 0.15.0
