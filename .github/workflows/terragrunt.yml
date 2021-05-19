@@ -8,7 +8,6 @@ on:
 jobs:
   terragrunt:
     runs-on: ubuntu-latest
-    env:
     steps:
     - uses: actions/checkout@v2
     - name: Install Terraform + Terragrunt
