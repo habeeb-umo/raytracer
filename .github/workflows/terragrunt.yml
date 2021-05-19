@@ -1,0 +1,20 @@
+name: Terragrunt Plan / Apply
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  terragrunt:
+    runs-on: ubuntu-latest
+    env:
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Terraform + Terragrunt
+      run: |
+        brew install terragrunt
+        brew unlink terraform
+        brew install tfenv
+        tfenv install 0.15.0
+        tfenv use 0.15.0
