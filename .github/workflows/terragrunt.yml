@@ -12,4 +12,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install Terraform + Terragrunt
       run: |
-        brew install tfenv
+        brew install tfenv --build-from-source
