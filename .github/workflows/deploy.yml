@@ -9,20 +9,21 @@ jobs:
   checkTag:
     runs-on: ubuntu-latest
     outputs:
-      release-tag: ${{ steps.check-tag.outputs.release-tag }}
+      is-release-tag: ${{ steps.check-tag.outputs.is-release-tag }}
     steps:
       - name: Check tag
         id: check-tag
         run: |
           if [[${{ github.ref }} =~ refs\/tags\/v[0-9]{4}\.[0-9]{2}\.[0-9]{2}\.\w{7}]]; then
-            echo "::set-output name=run_jobs::true"
+            echo "::set-output name=is-release-tag::true"
           else
-            echo "::set-output name=run_jobs::false"
+            echo "::set-output name=is-release-tag::false"
           fi
+
 
   greet:
     needs: [checkTag]
-    if: needs.checkTag.outputs.release-tag == 'true'
+    if: needs.checkTag.outputs.is-release-tag == 'true'
     
     runs-on: ubuntu-latest
     steps:
