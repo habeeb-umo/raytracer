@@ -5,6 +5,9 @@ name: Deploy
 on: 
   release:
     types: [released]
+    
+concurrency: prod-deploy
+
 jobs:
   checkTag:
     runs-on: ubuntu-latest
