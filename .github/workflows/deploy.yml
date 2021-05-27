@@ -23,6 +23,7 @@ jobs:
           else
             echo "::set-output name=is-release-tag::false"
             echo "ERROR: Invalid tag name for a release. Correct example: v2021.05.27.d33cf8z"
+            exit 1
           fi
 
 
