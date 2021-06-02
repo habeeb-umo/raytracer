@@ -4,7 +4,7 @@ name: Deploy
 
 on: 
   release:
-    types: [released]
+    types: [released, published]
     
 concurrency: prod-deploy
 
