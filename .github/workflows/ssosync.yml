@@ -1,0 +1,18 @@
+name: Sync SSO Groups
+
+on: workflow_dispatch
+jobs:
+  ssosync:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout ssosync repo
+      uses: actions/checkout@v2
+      with:
+        repository: awslabs/ssosync
+        ref: tags/v1.0.0-rc.9
+
+    - name: Install Go and build binary
+      run: |
+        wget -c https://dl.google.com/go/go1.16.5.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+        export PATH=$PATH:/usr/local/go/bin
+        go make-build
