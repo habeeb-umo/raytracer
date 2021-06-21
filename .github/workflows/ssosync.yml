@@ -9,7 +9,6 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: awslabs/ssosync
-        ref: v1.0.0-rc.9
 
     - name: Install Go and build binary
       run: |
