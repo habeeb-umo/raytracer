@@ -34,4 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
+      continue-on-error: true
+      run: |
+        echo "Hello ${{ github.event.inputs.name }}"
+        exit 1
