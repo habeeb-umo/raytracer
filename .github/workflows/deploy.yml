@@ -36,5 +36,5 @@ jobs:
     - name: Send greeting
       continue-on-error: true
       run: |
-        echo "Hello ${{ github.event.inputs.name }}"
+        echo "Hello ${{ github.event.inputs.name }} ${GITHUB_REF##*/}"
         exit 1
