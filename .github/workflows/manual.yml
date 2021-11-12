@@ -2,7 +2,17 @@
 
 name: Create pre-release
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "Environment to deploy to."
+        required: true
+        default: 'dev'
+      user_id:
+        description: "Slack user id that initiated deploy."
+        required: false
+      
 jobs:
   prerelease:
     runs-on: ubuntu-latest
