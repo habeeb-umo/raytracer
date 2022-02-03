@@ -1,0 +1,16 @@
+# This is a workflow that is manually triggered
+
+name: Create pre-release
+
+on: workflow_dispatch
+jobs:
+  prerelease:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: master
+    - name: Set version env
+      run: |
+        git merge dev
+        git push origin master
