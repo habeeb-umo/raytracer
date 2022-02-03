@@ -12,5 +12,6 @@ jobs:
         ref: master
     - name: Set version env
       run: |
-        git merge dev
+        git fetch --all
+        git merge origin/dev
         git push origin master
